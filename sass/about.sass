@@ -1,0 +1,91 @@
+@import 'responsive'
+
+.about
+	&__wrap
+		display: flex
+		flex-wrap: wrap
+
+	&__item
+		&--pic
+			width: calc(100% - 700px)
+			+media(lgxs)
+				width: calc(100% - 600px)
+			+media(mdx)
+				width: calc(100% - 500px)
+			+media(md)
+				width: 100%
+			img
+				display: block	
+				width: 100%	
+				height: 100%
+				object-fit: cover
+				+media(md)
+					height: auto
+					object-fit: initial
+
+		&--content
+			width: 700px
+			background-color: #ff6a00
+			padding: 50px 42px
+			padding-bottom: 430px
+			+media(lgxs)
+				width: 600px
+			+media(mdx)
+				width: 500px
+				padding: 40px 20px
+				padding-bottom: 290px
+			+media(md)
+				width: 100%
+
+	&__info
+		font-size: 18px
+		line-height: 1.2
+		color: #fff
+		text-transform: uppercase
+		padding-bottom: 25px
+		font-weight: bold
+		+media(sm)
+			font-size: 17px
+
+	&__text
+		p
+			font-size: 16px
+			line-height: 1.5
+			color: #fff
+			padding-bottom: 2em
+
+		h1
+			font-size: 24px
+		h2
+			font-size: 20px
+
+		h3
+			font-size: 16px
+			
+		h4, h5, h6
+			font-size: 14px
+
+		h1, h2, h3, h4, h5, h6
+			color: #fff
+			margin: 10px 0
+			text-transform: uppercase
+			font-weight: bold
+
+		ul, ol
+			margin: 1em 0
+
+			li
+				list-style-position: inside
+				line-height: 1.8
+				color: #fff
+				padding-left: 20px
+				margin-bottom: 5px
+
+		ul
+			li
+				list-style-type: disc
+
+		ol
+			padding: 0px
+			li
+				list-style-type: decimal

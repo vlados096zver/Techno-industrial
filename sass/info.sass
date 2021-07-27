@@ -1,0 +1,77 @@
+@import 'responsive'
+
+.info
+	margin-bottom: 112px
+	&__wrap
+		display: flex
+		flex-wrap: wrap
+		background-color: #ff6a00
+		padding: 0 48px
+		padding-top: 45px
+
+
+	&__item
+		&--aside
+			width: 445px
+			+media(md)
+				width: 100%
+
+		&--content
+			width: calc(100% - 445px)
+			padding-right: 38px
+			+media(md)
+				width: 100%
+				padding-right: 0px
+
+	&__holder
+		background-color: #f3f3f3
+		box-shadow: 0px 4px 20px 5px rgba(0, 0, 0, 0.25)
+		border-radius: 30px
+		padding: 40px 35px
+		margin-bottom: 32px
+
+	&__text
+		p
+			font-size: 16px
+			line-height: 1.5
+			color: #fff
+			padding-bottom: 2em
+
+		h1
+			font-size: 42px
+		h2
+			font-size: 40px
+
+		h3
+			font-size: 38px
+
+		h4
+			font-size: 36px
+			
+		h5, h6
+			font-size: 30px
+
+		h1, h2, h3, h4, h5, h6
+			color: #fff
+			text-transform: uppercase
+			padding-bottom: 35px
+			font-weight: 900
+
+		ul, ol
+			margin: 1em 0
+
+			li
+				list-style-position: inside
+				line-height: 1.8
+				color: #fff
+				padding-left: 20px
+				margin-bottom: 5px
+
+		ul
+			li
+				list-style-type: disc
+
+		ol
+			padding: 0px
+			li
+				list-style-type: decimal

@@ -1,0 +1,189 @@
+body {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	min-height: 100vh;
+	overflow-x: hidden;
+	color: #333333;
+	background-color: #e5e5e5;
+	font-size: 16px;
+	line-height: 1.2;
+	font-weight: normal;
+	font-style: normal;
+	font-family: "Roboto";
+}
+
+* {
+	box-sizing: border-box;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+.svg-about {
+	display: none;
+}
+
+.container {
+	max-width: 1630px;
+	width: 100%;
+	margin: 0 auto;
+	padding: 0 15px;
+}
+
+.title {
+	font-size: 48px;
+	line-height: 1.2;
+	color: #333333;
+	text-transform: uppercase;
+	padding-bottom: 40px;
+	font-weight: 900;
+}
+
+.title--inner {
+	color: #fff;
+}
+
+.title--write {
+	position: absolute;
+	top: 0px;
+	right: 100%;
+	width: max-content;
+	padding-right: 40px;
+}
+
+.subtitle {
+	font-size: 36px;
+	line-height: 1.2;
+	color: #333333;
+	text-transform: uppercase;
+	padding-bottom: 35px;
+	font-weight: 900;
+}
+
+.subtitle--inner {
+	color: #fff;
+}
+
+.input {
+	display: block;
+	width: 100%;
+	background-color: #fff;
+	border: none;
+	outline: none;
+	border-radius: 10px;
+	padding: 10px 15px;
+	padding-bottom: 11px;
+}
+
+.input--area {
+	min-height: 150px;
+	resize: none;
+}
+
+.input.form-fail {
+	border-color: #b00;
+}
+
+.input.form-done {
+	border-color: #90ee90;
+}
+
+.btn {
+	width: 100%;
+	font: inherit;
+	font-size: 16px;
+	line-height: 1.2;
+	border: 2px solid #ff6a00;
+	outline: none;
+	border-radius: 10px;
+	padding: 13px 5px;
+	text-transform: uppercase;
+	font-weight: 900;
+	transition: 0.3s background-color, 0.3s color, 0.3s border;
+}
+
+.btn--clear {
+	cursor: pointer;
+	max-width: 210px;
+	color: #ff6a00;
+	background-color: transparent;
+	margin-right: 30px;
+}
+
+.btn--clear:hover {
+	background-color: #ff6a00;
+	color: #fff;
+}
+
+.btn--send {
+	max-width: 250px;
+	color: #fff;
+	background-color: #ff6a00;
+}
+
+.btn--send[disabled] {
+	cursor: default;
+	opacity: 0.5;
+	text-decoration: line-through;
+}
+
+.btn--send:not(:disabled) {
+	cursor: pointer;
+}
+
+.btn--send:not(:disabled):hover {
+	border-color: #8c3a00;
+	background-color: #8c3a00;
+}
+
+@media screen and (max-width: 1350px) {
+
+.btn {
+	margin-bottom: 30px;
+}
+
+}
+
+@media screen and (max-width: 1150px) {
+
+.title {
+	font-size: 42px;
+}
+
+.title--write {
+	position: static;
+}
+
+}
+
+@media screen and (max-width: 1050px) {
+
+.title {
+	font-size: 38px;
+}
+
+.subtitle {
+	font-size: 30px;
+}
+
+}
+
+@media screen and (max-width: 560px) {
+
+.title {
+	font-size: 24px;
+}
+
+.subtitle {
+	font-size: 21px;
+}
+
+.btn {
+	max-width: 250px;
+}
+
+}
+

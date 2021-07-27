@@ -1,0 +1,120 @@
+.occurrence__holder {
+	margin-top: 16px;
+}
+
+.occurrence__wrap {
+	display: flex;
+	flex-wrap: wrap;
+	margin-bottom: 95px;
+}
+
+.occurrence__wrap:last-child {
+	margin-bottom: 85px;
+}
+
+.occurrence__item--text {
+	width: 480px;
+	padding-right: 50px;
+}
+
+.occurrence__item--pic {
+	width: calc(100% - 480px);
+}
+
+.occurrence__item--pic img {
+	display: block;
+	width: 100%;
+}
+
+.occurrence__content p {
+	font-size: 16px;
+	line-height: 1.5;
+	color: #333333;
+}
+
+.occurrence__content p:not(:last-child) {
+	padding-bottom: 2em;
+}
+
+.occurrence__content h1 {
+	font-size: 24px;
+}
+
+.occurrence__content h2 {
+	font-size: 20px;
+}
+
+.occurrence__content h3 {
+	font-size: 16px;
+}
+
+.occurrence__content h4,
+.occurrence__content h5,
+.occurrence__content h6 {
+	font-size: 14px;
+}
+
+.occurrence__content h1,
+.occurrence__content h2,
+.occurrence__content h3,
+.occurrence__content h4,
+.occurrence__content h5,
+.occurrence__content h6 {
+	color: #333333;
+	margin: 10px 0;
+	text-transform: uppercase;
+	font-weight: bold;
+}
+
+.occurrence__content ul,
+.occurrence__content ol {
+	margin: 1em 0;
+}
+
+.occurrence__content ul li,
+.occurrence__content ol li {
+	list-style-position: inside;
+	line-height: 1.8;
+	color: #333333;
+	padding-left: 20px;
+	margin-bottom: 5px;
+}
+
+.occurrence__content ul li {
+	list-style-type: disc;
+}
+
+.occurrence__content ol {
+	padding: 0px;
+}
+
+.occurrence__content ol li {
+	list-style-type: decimal;
+}
+
+@media screen and (max-width: 1050px) {
+
+.occurrence__wrap {
+	margin-bottom: 45px;
+}
+
+.occurrence__wrap:last-child {
+	margin-bottom: 50px;
+}
+
+}
+
+@media screen and (max-width: 960px) {
+
+.occurrence__item--text {
+	width: 100%;
+	padding-right: 0px;
+	margin-bottom: 30px;
+}
+
+.occurrence__item--pic {
+	width: 100%;
+}
+
+}
+
