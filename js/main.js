@@ -1,16 +1,10 @@
  $(document).ready(function() {
 
-       /*$('.mobile-wrap').on('click', function() {
-         $('.main-header__list').slideToggle();
-       });
-
-       $(window).resize(function() {
-
-         if ($(window).width() >= 780) {
-           $('.main-header__list').attr('style', '');
-         }
-
-       });*/
+    if($('.doc__item').length==1) {
+      $('.doc').addClass('doc--level1');
+    } else if ($('.doc__item').length==2) {
+      $('.doc').addClass('doc--level2');
+    }
 
        (function() {
          var headerBlock = $('.main-header');

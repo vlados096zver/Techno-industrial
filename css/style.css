@@ -240,7 +240,14 @@ main {
 
 .doc {
 	margin-top: -270px;
-	padding-bottom: 15px;
+}
+
+.doc--level1 {
+	margin-top: -70px;
+}
+
+.doc--level2 {
+	margin-top: -175px;
 }
 
 .doc__holder {
@@ -300,6 +307,10 @@ main {
 	display: block;
 	width: 100%;
 	height: 100%;
+}
+
+.occurrence {
+	padding-top: 15px;
 }
 
 .occurrence__holder {
@@ -476,8 +487,13 @@ main {
 	margin-right: 29px;
 }
 
+.main-header__menu {
+	margin-top: -2px;
+}
+
 .main-header__list {
 	display: flex;
+	align-items: center;
 }
 
 .main-header__list li:not(:last-child) {
@@ -789,6 +805,8 @@ main {
 
 .main-footer__block {
 	display: flex;
+	flex-wrap: wrap;
+	margin-right: 20px;
 }
 
 .main-footer__holder {
@@ -799,13 +817,13 @@ main {
 	font-size: 14px;
 	line-height: 1.2;
 	color: #333;
+	margin-right: 40px;
 	margin-bottom: 20px;
 }
 
 .main-footer__elem--text {
 	color: #808080;
-	margin-left: 40px;
-	margin-right: 25px;
+	margin-right: 0px;
 }
 
 .main-footer__col {
@@ -1000,6 +1018,7 @@ img {
 
 .main-footer__wrap {
 	width: 100%;
+	padding-right: 0px;
 }
 
 .btn {
@@ -1138,6 +1157,14 @@ img {
 	margin-top: -290px;
 }
 
+.doc--level1 {
+	margin-top: -125px;
+}
+
+.doc--level2 {
+	margin-top: -235px;
+}
+
 .doc__holder {
 	padding: 0px;
 }
@@ -1168,6 +1195,27 @@ img {
 	width: 100%;
 }
 
+.info__text h1 {
+	font-size: 39px;
+}
+
+.info__text h2 {
+	font-size: 37px;
+}
+
+.info__text h3 {
+	font-size: 35px;
+}
+
+.info__text h4 {
+	font-size: 32px;
+}
+
+.info__text h5,
+.info__text h6 {
+	font-size: 28px;
+}
+
 .contacts__item--form {
 	width: 100%;
 }
@@ -1175,6 +1223,27 @@ img {
 .contacts__item--content {
 	width: 100%;
 	padding-right: 0px;
+}
+
+.contacts__text h1 {
+	font-size: 39px;
+}
+
+.contacts__text h2 {
+	font-size: 37px;
+}
+
+.contacts__text h3 {
+	font-size: 35px;
+}
+
+.contacts__text h4 {
+	font-size: 32px;
+}
+
+.contacts__text h5,
+.contacts__text h6 {
+	font-size: 28px;
 }
 
 .container--inner {
@@ -1263,6 +1332,14 @@ img {
 
 .btn {
 	max-width: 250px;
+}
+
+}
+
+@media screen and (max-width: 480px) {
+
+.main-footer__wrap {
+	flex-direction: column;
 }
 
 }

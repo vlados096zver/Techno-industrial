@@ -146,7 +146,7 @@
     <div class="occurrence__holder">
       <div class="occurrence__wrap">
         <div class="occurrence__item occurrence__item--text">
-          <h4 id="about" class="subtitle">Про нас</h4>
+          <h4 class="subtitle">Про нас</h4>
           <div class="occurrence__content">
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores, animi similique ratione voluptates harum, repellendus, voluptatem eveniet assumenda debitis hic consequatur nobis. Molestias vero id voluptas porro atque omnis quos.</p>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores, animi similique ratione voluptates harum, repellendus, voluptatem eveniet assumenda debitis hic consequatur nobis. Molestias vero id voluptas porro atque omnis quos.</p>
@@ -179,89 +179,109 @@
          <div class="info__holder">
            <canvas id="generation"></canvas>
           <script>
-        var color = Chart.helpers.color
-       var barChartData = {
-         labels: ['2021', '2031', '2035', '2044', '2038'],
-         datasets: [{
-           label: 'Видобуток газу, млн куб. м/рік',
-           backgroundColor: '#4fc3f7',
-           data: [58, 35, 42, 50, 455],
-           barThickness: 18
-         }, {
-           label: 'Видобуток конденсату. м/рік',
-           backgroundColor: '#ae52d4',
-           data: [45, 95, 385, 155, 44],
-           barThickness: 18
-         }]
-       };
+            var color = Chart.helpers.color;
+             var barChartData = {
+               labels: ['2021', '2031', '2035', '2044', '2038'],
+               datasets: [{
+                 label: 'Видобуток газу, млн куб. м/рік',
+                 backgroundColor: '#4fc3f7',
+                 data: [58, 35, 42, 50, 455],
+                 barThickness: 18
+               }, {
+                 label: 'Видобуток конденсату. м/рік',
+                 backgroundColor: '#ae52d4',
+                 data: [45, 95, 385, 155, 44],
+                 barThickness: 18
+               }]
+             };
 
-       window.onload = function() {
-         var firstdiagram = document.getElementById('generation').getContext('2d');
+             window.onload = function() {
+               var firstdiagram = document.getElementById('generation').getContext('2d');
 
-         window.myBar = new Chart(firstdiagram, {
-           type: 'bar',
-           data: barChartData,
-           options: {
-             categoryPercentage: 1,
-             responsive: true,
-             maintainAspectRatio: false,
-             plugins: {
-               legend: {
-                 display: true,
-                 position: 'top',
-                 align: 'start',
-                 labels: {
-                   boxWidth: 12,
-                   boxHeight: 12,
-                   font: {
-                     family: 'Roboto',
-                     size: 16,
+               window.myBar = new Chart(firstdiagram, {
+                 type: 'bar',
+                 data: barChartData,
+                 options: {
+                   categoryPercentage: 1,
+                   responsive: true,
+                   maintainAspectRatio: false,
+                   plugins: {
+                     legend: {
+                       display: true,
+                       position: 'top',
+                       align: 'start',
+                       labels: {
 
-                   }
-                 },
-               }
-             },
-             scales: {
-               y: {
-                 ticks: {
-                   color: '#333',
-                   font: {
-                     family: 'Roboto',
-                     size: 16,
-                     weight: 'bold'
+                         boxWidth: 12,
+                         boxHeight: 12,
+                         //padding: 40,
+                         font: {
+                           family: 'Roboto',
+                           size: 16,
+
+                         }
+                       },
+                       padding: {
+                         bottom: 38
+                       },
+                     }
                    },
-                   // stepSize: 100
-                 },
-                 grid: {
-                   borderWidth: 0,
-                   lineWidth: 1
-                 }
-               },
-               x: {
-                 ticks: {
-                   color: '#000',
-                   font: {
-                     family: 'Roboto',
-                     size: 16,
-                     weight: 'bold'
+                   scales: {
+                     y: {
+                       ticks: {
+                         color: '#333',
+                         font: {
+                           family: 'Roboto',
+                           size: 16,
+                           weight: 'bold'
+                         },
+                         // stepSize: 100
+                       },
+                       grid: {
+                         borderWidth: 0,
+                         lineWidth: 1
+                       }
+                     },
+                     x: {
+                       ticks: {
+                         color: '#000',
+                         font: {
+                           family: 'Roboto',
+                           size: 16,
+                           weight: 'bold'
+                         },
+                         maxRotation: 45,
+                         minRotation: 45
+                       },
+                       grid: {
+                         borderWidth: 0,
+                         lineWidth: 0
+                       }
+                     }
                    },
-                   maxRotation: 45,
-                   minRotation: 45
+                   tooltips: {
+                     mode: 'x-axis',
+                   },
                  },
-                 grid: {
-                   borderWidth: 0,
-                   lineWidth: 0
-                 }
-               }
-             },
-             tooltips: {
-               mode: 'x-axis',
-             },
+                 plugins: [
+                   {
+                     afterInit(chart) {
+                       chart.legend._update = chart.legend.update;
+                       chart.legend.update = function(...args) {
+                         this._update(...args);
+                         const padding = {
+                           ...(this.options.padding || {})
+                         };
+                         this.height += Math.max(0, ~~padding.bottom);
+                         this.width += Math.max(0, ~~padding.right);
+                       };
+                     },
+                   },
+                 ],
+               });
+             };
 
-           }
-         });
-       };
-            </script>
+          </script>
          </div>
           <h4 class="subtitle subtitle--inner">План видобутку</h4>
         </div>
@@ -306,11 +326,11 @@
           </div>
           <div class="contacts__box contacts__box--phone">
             <label for="c_phone" class="contacts__label">Телефон</label>
-            <input id="c_phone" type="text" class="input">
+            <input id="c_phone" type="tel" class="input">
           </div>
           <div class="contacts__box">
             <label for="c_msg" class="contacts__label">Повідомлення</label>
-            <textarea id="c_msg" type="text" class="input input--area"></textarea>
+            <textarea id="c_msg" class="input input--area"></textarea>
           </div>
           <div class="contacts__inner">
             <button type="reset" class="btn btn--clear">Скасувати</button>
