@@ -67,7 +67,7 @@
 </header>
 
 <section class="about">
-  <div class="container">
+  <div class="container container--inner">
     <div class="about__wrap">
       <div class="about__item about__item--pic">
         <img src="img/bg-about.png" alt="">
@@ -173,61 +173,95 @@
 </section>
 
 <section class="info" id="info">
-  <div class="container">
+  <div class="container container--inner">
     <div class="info__wrap">
         <div class="info__item info__item--content">
          <div class="info__holder">
            <canvas id="generation"></canvas>
           <script>
-            var color = Chart.helpers.color;
+        var color = Chart.helpers.color
+       var barChartData = {
+         labels: ['2021', '2031', '2035', '2044', '2038'],
+         datasets: [{
+           label: 'Видобуток газу, млн куб. м/рік',
+           backgroundColor: '#4fc3f7',
+           data: [58, 35, 42, 50, 455],
+           barThickness: 18
+         }, {
+           label: 'Видобуток конденсату. м/рік',
+           backgroundColor: '#ae52d4',
+           data: [45, 95, 385, 155, 44],
+           barThickness: 18
+         }]
+       };
 
-              Chart.defaults.global.defaultFontSize = 18;
-              Chart.defaults.global.defaultFontFamily = "Roboto";
+       window.onload = function() {
+         var firstdiagram = document.getElementById('generation').getContext('2d');
 
+         window.myBar = new Chart(firstdiagram, {
+           type: 'bar',
+           data: barChartData,
+           options: {
+             categoryPercentage: 1,
+             responsive: true,
+             maintainAspectRatio: false,
+             plugins: {
+               legend: {
+                 display: true,
+                 position: 'top',
+                 align: 'start',
+                 labels: {
+                   boxWidth: 12,
+                   boxHeight: 12,
+                   font: {
+                     family: 'Roboto',
+                     size: 16,
 
-            var barChartData = {
-              labels: ['2021', '2031', '2035', '2044', '2038'],
-              datasets: [{
-                label: 'Видобуток газу, млн куб. м/рік',
-                backgroundColor: color(window.chartColors.color1).alpha(0.5).rgbString(),
-                borderColor: window.chartColors.color1,
-                borderWidth: 1,
-                barPercentage: 1,
-                data: [58, 5, 42, 50, 55, 45],
-              }, {
-                label: 'Видобуток конденсату. м/рік',
-                backgroundColor: color(window.chartColors.color2).alpha(0.5).rgbString(),
-                borderColor: window.chartColors.color2,
-                borderWidth: 1,
-                barPercentage: 1,
-                data: [45, 45, 25, 55, 44, 95],
-              }]
+                   }
+                 },
+               }
+             },
+             scales: {
+               y: {
+                 ticks: {
+                   color: '#333',
+                   font: {
+                     family: 'Roboto',
+                     size: 16,
+                     weight: 'bold'
+                   },
+                   // stepSize: 100
+                 },
+                 grid: {
+                   borderWidth: 0,
+                   lineWidth: 1
+                 }
+               },
+               x: {
+                 ticks: {
+                   color: '#000',
+                   font: {
+                     family: 'Roboto',
+                     size: 16,
+                     weight: 'bold'
+                   },
+                   maxRotation: 45,
+                   minRotation: 45
+                 },
+                 grid: {
+                   borderWidth: 0,
+                   lineWidth: 0
+                 }
+               }
+             },
+             tooltips: {
+               mode: 'x-axis',
+             },
 
-            };
-
-            window.onload = function() {
-              var firstdiagram = document.getElementById('generation').getContext('2d');
-              window.myBar = new Chart(firstdiagram, {
-                type: 'bar',
-                data: barChartData,
-                options: {
-                  responsive: true,
-                  legend: {
-                    position: 'top',
-                    align: 'start',
-                    labels: {
-                      boxWidth: 12,
-                      boxHeight: 12
-                    }
-                  },
-                  tooltips: {
-                    mode: 'x-axis',
-                  },
-                }
-              });
-            };
-
-          </script>
+           }
+         });
+       };
+            </script>
          </div>
           <h4 class="subtitle subtitle--inner">План видобутку</h4>
         </div>

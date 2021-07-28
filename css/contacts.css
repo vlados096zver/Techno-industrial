@@ -118,6 +118,14 @@
 
 @media screen and (max-width: 1350px) {
 
+.contacts__inner {
+	padding-bottom: 15px;
+}
+
+}
+
+@media screen and (max-width: 960px) {
+
 .contacts__item--form {
 	width: 100%;
 }
@@ -125,10 +133,6 @@
 .contacts__item--content {
 	width: 100%;
 	padding-right: 0px;
-}
-
-.contacts__inner {
-	padding-bottom: 15px;
 }
 
 }

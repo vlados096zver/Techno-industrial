@@ -171,6 +171,14 @@ img {
 
 }
 
+@media screen and (max-width: 960px) {
+
+.container--inner {
+	padding: 0px;
+}
+
+}
+
 @media screen and (max-width: 560px) {
 
 .title {

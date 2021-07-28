@@ -401,7 +401,7 @@ main {
 	top: 0px;
 	width: 100%;
 	z-index: 15;
-	background-color: #f5f5f5;
+	background-color: #e5e5e5;
 	transition: 0.3s top;
 }
 
@@ -415,6 +415,11 @@ main {
 	align-items: center;
 	padding-top: 43px;
 	padding-bottom: 52px;
+	transition: 0.3s padding;
+}
+
+.main-header__content--fixed {
+	padding: 30px 0;
 }
 
 .main-header__row {
@@ -446,6 +451,7 @@ main {
 	font-size: 10px;
 	line-height: 1.2;
 	color: #ff6a00;
+	text-transform: uppercase;
 	font-weight: bold;
 }
 
@@ -576,6 +582,7 @@ main {
 }
 
 .info__holder {
+	height: 380px;
 	background-color: #f3f3f3;
 	box-shadow: 0px 4px 20px 5px rgba(0, 0, 0, 0.25);
 	border-radius: 30px;
@@ -798,6 +805,7 @@ main {
 .main-footer__elem--text {
 	color: #808080;
 	margin-left: 40px;
+	margin-right: 25px;
 }
 
 .main-footer__col {
@@ -982,15 +990,6 @@ img {
 	justify-content: center;
 }
 
-.contacts__item--form {
-	width: 100%;
-}
-
-.contacts__item--content {
-	width: 100%;
-	padding-right: 0px;
-}
-
 .contacts__inner {
 	padding-bottom: 15px;
 }
@@ -1049,7 +1048,7 @@ img {
 	flex-basis: 100%;
 	order: 2;
 	justify-content: center;
-	padding-bottom: 30px;
+	padding-bottom: 20px;
 	margin-right: 0px;
 	margin-top: 20px;
 }
@@ -1092,6 +1091,24 @@ img {
 	font-size: 22px;
 }
 
+.info__wrap {
+	padding: 0 20px;
+	padding-top: 35px;
+}
+
+.info__item--aside {
+	width: 100%;
+}
+
+.info__item--content {
+	width: 100%;
+	padding-right: 0px;
+}
+
+.info__holder {
+	padding: 35px 20px;
+}
+
 .title {
 	font-size: 38px;
 }
@@ -1117,8 +1134,12 @@ img {
 	width: 100%;
 }
 
+.doc {
+	margin-top: -290px;
+}
+
 .doc__holder {
-	padding: 0px 15px;
+	padding: 0px;
 }
 
 .doc__wrap {
@@ -1134,6 +1155,7 @@ img {
 .doc__item {
 	padding: 25px 20px;
 	padding-bottom: 15px;
+	margin-bottom: 35px;
 }
 
 .occurrence__item--text {
@@ -1146,13 +1168,17 @@ img {
 	width: 100%;
 }
 
-.info__item--aside {
+.contacts__item--form {
 	width: 100%;
 }
 
-.info__item--content {
+.contacts__item--content {
 	width: 100%;
 	padding-right: 0px;
+}
+
+.container--inner {
+	padding: 0px;
 }
 
 }
@@ -1191,6 +1217,10 @@ img {
 
 .main-header__title {
 	font-size: 20px;
+}
+
+.main-header__col {
+	font-size: 13px;
 }
 
 }
